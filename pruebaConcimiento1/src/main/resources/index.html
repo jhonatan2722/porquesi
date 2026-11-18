@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href = "style.css">
+    <title>Amigurumis Test V1</title>
+
+</head>
+<body>
+<div class = "contenedor">
+    <div class = "apartado">
+        <h1 class = "titulo1">Ver Productos</h1>
+        <button class = "botoncin" id = "boton" >Click Para Ver Productos</button>
+        <ul id = "verProductos" class = "lista"></ul>
+    </div>
+
+    <div  class = "apartado">
+         <h1 class = "titulo1"  >Guardar productos</h1>
+         <input id = "precio" type ="number" placeholder="Ingresa precio" min ="0">
+         <input id = "descripcion" type ="text" placeholder="ingresa descripcion">
+         <button class = "botoncin" id = botong >Dale click para guardar</button>
+    </div>
+</div>
+
+<div class = "contenedor">
+    <div class = "apartado">
+        <h1 class = "titulo1" >Actualizar Productos</h1>
+        <input id = "idactualizar" type = "number" min = "1" placeholder="Ingresa id del producto">
+        <input id = "newprecio" type ="number" placeholder="Ingresa nuevo precio" min ="0">
+        <input id = "newdescripcion" type ="text" placeholder="ingresa nueva descripcion">
+        <button id = "botonactualizar" class ="botoncin">Click Para Actualizar</button>
+    </div>
+
+    <div class = "apartado">
+        <h1 class = "titulo1">Eliminar Productos</h1>
+        <input id ="eliminarid" type = "number" min = "1" placeholder="Ingresa Id">
+        <button id ="eliminarboton" class = "botoncin">Dale click para Borrar</button>
+    </div>
+
+</div>
+
+<script src = "app.js"></script>
+</body>
+</html>

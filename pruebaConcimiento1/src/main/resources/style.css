@@ -1,0 +1,104 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+.apartado{
+    white-space: break-spaces;
+    font-weight: bold;
+}
+
+
+.titulo1{
+    font-family: Bahnschrift;
+}
+
+.botoncin {
+    --color: #000000;
+    --boder_color: linear-gradient(240deg, #3bb1ff 50%, #f70505 50%);
+    --bg_color: #f3f3f3;
+    --border_radius: 10px;
+    --width: 140px;
+    --border_thikness: 2px;
+    position: relative;
+    z-index: 1;
+    width: var(--width);
+    height: 50px;
+    color: var(--color);
+    font-size: 15px;
+    border-radius: var(--border_radius);
+    overflow: hidden;
+    transition: .3s;
+    border: none;
+    background: none;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    /*** full width block ***/
+    /* width: 100%; */
+}
+
+.botoncin::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: 50%;
+    top: 50%;
+    width: var(--width);
+    height: var(--width);
+    background: var(--boder_color);
+    transform-origin: left top;
+    animation: rotate 2s linear infinite;
+    box-sizing: border-box;
+}
+
+.botoncin::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: var(--border_thikness);
+    background: var(--bg_color);
+    border-radius: calc(var(--border_radius) - 2px);
+    box-sizing: border-box;
+}
+
+.botoncin:hover {
+    --color: #686868;
+    --boder_color: #000000;
+}
+
+@keyframes rotate {
+    100% {
+        /*** move right side 360deg, left -360deg ***/
+        transform: rotate(-360deg);
+    }
+}
+
+/*** disabled style ***/
+.botoncin:disabled {
+    pointer-events: none;
+    opacity: .65;
+    color: #7e7e7e;
+    background: #dcdcdc;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.botoncin:disabled::before {
+    animation: none;
+    --boder_color: #a8a7a7;
+}
+
+/*** dark mode style ***/
+html.dark-mode .btn-184 {
+    --color: #ffffff;
+    --bg_color: #1b2022;
+    --boder_color: #f7e705;
+}
